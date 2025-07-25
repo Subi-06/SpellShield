@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SpellShield - Wand of Safety</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 60px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .btn {
+      padding: 18px;
+      font-size: 18px;
+      width: 100%;
+      border: none;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: rgba(255, 0, 0, 0.8);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔒 SpellShield: Wand of Safety</h1>
+
+  <div class="button-container">
+    <button class="btn" onclick="location.href='sos.html'">🔴 Trigger SOS</button>
+    <button class="btn" onclick="location.href='report.html'">📝 Report Anonymously</button>
+    <button class="btn" onclick="location.href='chat.html'">💬 Chat Support</button>
+  </div>
+
+</body>
+</html>

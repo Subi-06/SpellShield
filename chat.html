@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat Support - SpellShield</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    h2 {
+      margin: 0;
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, .4);
+    }
+    .chat-box {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .message {
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      border-radius: 15px;
+      max-width: 70%;
+      line-height: 1.4;
+    }
+    .user {
+      background: #4caf50;
+      margin-left: auto;
+    }
+    .counselor {
+      background: #607d8b;
+      margin-right: auto;
+    }
+    .typing {
+      font-style: italic;
+      opacity: .7;
+    }
+    .input-area {
+      display: flex;
+      padding: 15px;
+      background: rgba(0, 0, 0, .3);
+    }
+    .input-area input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    .input-area button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff4c4c;
+      color: #fff;
+      cursor: pointer;
+      transition: .3s;
+    }
+    .input-area button:hover {
+      background: #d63434;
+    }
+  </style>
+</head>
+<body>
+  <h2>💬 Chat Support</h2>
+
+  <div class="chat-box" id="chatBox">
+    <div class="message counselor">Hello, I'm here to help. Can you share what happened?</div>
+    <div class="message counselor">Your identity is safe with us. Take your time.</div>
+  </div>
+
+  <div class="input-area">
+    <input type="text" id="userInput" placeholder="Type your message…" autocomplete="off"/>
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    const replies = [
+      "I understand. How are you feeling right now?",
+      "Thank you for sharing that. What support would help you most?",
+      "I’m here for you. Have you experienced this before?",
+      "That sounds difficult. Would you like resources or someone to contact?"
+    ];
+    let replyIndex = 0;
+
+    function sendMessage() {
+      const input = document.getElementById("userInput");
+      const text = input.value.trim();
+      if (!text) return;
+
+      addBubble(text, "user");
+      input.value = "";
+      autoReply();
+    }
+
+    function addBubble(text, type) {
+      const chat = document.getElementById("chatBox");
+      const bubble = document.createElement("div");
+      bubble.className = `message ${type}`;
+      bubble.textContent = text;
+      chat.appendChild(bubble);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function autoReply() {
+      const chat = document.getElementById("chatBox");
+      const typing = document.createElement("div");
+      typing.className = "message counselor typing";
+      typing.textContent = "Counselor is typing…";
+      chat.appendChild(typing);
+      chat.scrollTop = chat.scrollHeight;
+
+      setTimeout(() => {
+        typing.remove();
+        const reply = replies[replyIndex++ % replies.length];
+        addBubble(reply, "counselor");
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

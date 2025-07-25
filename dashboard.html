@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - SpellShield</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .report {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .report h3 {
+      margin-top: 0;
+    }
+
+    .status {
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .pending {
+      background-color: orange;
+      color: black;
+    }
+
+    .resolved {
+      background-color: lightgreen;
+      color: black;
+    }
+
+    .severity-low {
+      color: lightgreen;
+    }
+
+    .severity-medium {
+      color: yellow;
+    }
+
+    .severity-high {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛡 SpellShield - Admin Dashboard</h1>
+
+  <div class="report">
+    <h3>Report #1</h3>
+    <p><strong>Message:</strong> Someone followed me after college near gate 2.</p>
+    <p><strong>Location:</strong> Chennai, Tamil Nadu</p>
+    <p><strong>Severity:</strong> <span class="severity-high">High</span></p>
+    <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+  </div>
+
+  <div class="report">
+    <h3>Report #2</h3>
+    <p><strong>Message:</strong> A senior used harsh language in class.</p>
+    <p><strong>Location:</strong> Coimbatore</p>
+    <p><strong>Severity:</strong> <span class="severity-medium">Medium</span></p>
+    <p><strong>Status:</strong> <span class="status resolved">Resolved</span></p>
+  </div>
+
+  <div class="report">
+    <h3>Report #3</h3>
+    <p><strong>Message:</strong> I feel uncomfortable with a professor's remarks.</p>
+    <p><strong>Location:</strong> Tirunelveli</p>
+    <p><strong>Severity:</strong> <span class="severity-low">Low</span></p>
+    <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+  </div>
+
+</body>
+</html>

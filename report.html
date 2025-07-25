@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anonymous Report - SpellShield</title>
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      resize: none;
+      font-size: 16px;
+    }
+
+    input[type="file"] {
+      margin: 10px 0;
+      color: white;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff4c4c;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #d63434;
+    }
+
+    .message {
+      margin-top: 20px;
+      color: lightgreen;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📝 Anonymous Report</h1>
+
+  <form id="reportForm" onsubmit="submitReport(event)">
+    <label for="incident">Describe the incident:</label><br><br>
+    <textarea id="incident" required placeholder="Write here..."></textarea><br><br>
+
+    <label>Upload a screenshot (optional):</label><br>
+    <input type="file" accept="image/*"><br><br>
+
+    <button class="btn" type="submit">Submit Report</button>
+  </form>
+
+  <div class="message" id="successMsg" style="display:none;">
+    ✅ Thank you. You are heard.
+  </div>
+
+  <script>
+    function submitReport(event) {
+      event.preventDefault();
+      // Normally you'd send this to Firebase or a server
+      document.getElementById('reportForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

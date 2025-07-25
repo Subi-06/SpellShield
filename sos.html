@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SOS Triggered - SpellShield</title>
+  <style>
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #1e130c, #9a8478);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #ff4c4c;
+      animation: blink 1s step-start infinite;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin: 10px;
+    }
+
+    .btn:hover {
+      background-color: #555;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🚨 SOS Activated!</h1>
+  <p>Your alert has been sent successfully.</p>
+  <p>Location: Chennai, Tamil Nadu<br>Time: 18:32</p>
+  <p>Guardian and Admin have been notified.</p>
+
+  <!-- Play sound manually -->
+  <button class="btn" onclick="playSound()">🔊 Play Alert Sound</button>
+
+  <!-- Back to Home -->
+  <button class="btn" onclick="location.href='index.html'">⬅ Back to Home</button>
+
+  <!-- Audio Element -->
+  <audio id="sosAudio">
+    <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function playSound() {
+      var sound = document.getElementById("sosAudio");
+      sound.play();
+    }
+  </script>
+
+</body>
+</html>
