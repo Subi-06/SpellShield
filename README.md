@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 SpellShield: Wand of Safety
 
 SpellShield is a responsive, front-end web application designed to enhance women's safety through quick emergency access, anonymous reporting, and emotional support features. It provides a simple and user-friendly interface to take action when a woman is in distress, offering multiple lines of digital defense.
@@ -24,3 +25,7 @@ File Structure
 - report.html - Anonymous reporting form
 - chat.html - AI-like chat support
 - dashboard.html - Admin dashboard
+=======
+# SpellShield
+SpellShield is designed for Triwizardathon Event
+>>>>>>> f1aaae99daecc8069d82cdc0fe5a44575692e7bf
